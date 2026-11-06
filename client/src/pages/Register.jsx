@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
 
-function Register() {
+function Register({ setMessage, setError }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,20 +25,20 @@ function Register() {
         user,
       );
       if (response.data.message) {
-        // Showing the message to the client via "useState".
+        // Showing the message to the client.
         setMessage(response.data.message);
       }
     } catch (error) {
       console.error(error.message);
       if (error.status === 400)
         setMessage("User already exists, please make the Login.");
-      if (error.status === 500) setMessage("Internal error");
+      if (error.status === 500) setError(error.message);
     }
   };
 
   return (
     <>
-      <main className="w-dvw h-dvh flex flex-col justify-center bg-blue-950">
+      <main className="w-dvw h-dvh flex flex-col justify-center bg-blue-200">
         <section className="m-auto w-96 bg-cyan-50 p-11 rounded-2xl shadow-md backdrop-blur-md">
           <h1 className="text-center text-3xl font-bold mb-3.5">Register</h1>
           <form>
@@ -87,7 +86,6 @@ function Register() {
               Register
             </button>
           </form>
-          <p>{message}</p>
         </section>
       </main>
     </>
