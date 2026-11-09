@@ -39,8 +39,8 @@ exports.registerUser = async (req, res) => {
 };
 
 exports.loginUser = async (req, res) => {
-  const { email, password } = req.body;
   try {
+    const { email, password } = req.body;
     if (!email || !password) {
       return res.status(400).json({
         message: "Please enter E-mail & Password",
@@ -48,9 +48,16 @@ exports.loginUser = async (req, res) => {
     }
 
     const user = await User.findOne({ email }).select("+password");
+
+    if (!user || user.password === null) {
+      return res.status(401).json({
+        message: "Invalid e-email or password.",
+      });
+    }
+
     const isUser = bcrypt.compareSync(password, user.password);
 
-    if (!user || !isUser) {
+    if (!isUser) {
       return res.status(401).json({
         message: "Invalid e-email or password.",
       });
@@ -81,7 +88,15 @@ exports.getUserDetails = async (req, res) => {
     });
   } catch (err) {
     return res.status(500).json({
-      message: "Server side error.",
+      message: "Error fetching user.",
     });
   }
+};
+
+exports.logout = async (req, res) => {
+  req.user = null;
+
+  return res.status(200).json({
+    message: "Logged Out!",
+  });
 };

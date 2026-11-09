@@ -6,6 +6,7 @@ const { MONGO_URI, PORT } = process.env;
 
 const app = express();
 
+// Configs
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
@@ -15,15 +16,15 @@ app.use(
   }),
 );
 
+// MongoDB connection
 mongoose.Promise = global.Promise;
 mongoose
   .connect(MONGO_URI)
   .then(() => console.log("MongoDB connected!"))
   .catch((err) => console.error(err));
 
+// Importing the routes
 const userRoute = require("./routes/userRouter");
 app.use("/api/auth", userRoute);
 
-app.listen(PORT, () =>
-  console.log(`Server running in: http://localhost:${PORT}/`),
-);
+app.listen(PORT, () => console.log(`Server running in: http://localhost:${PORT}/`));

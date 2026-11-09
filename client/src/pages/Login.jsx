@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 
-function Login({ setMessage, setError }) {
+function Login({ setIsAuthenticated, setMessage, setError }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,12 +22,14 @@ function Login({ setMessage, setError }) {
 
       // Saves the jwt token in localStorage
       localStorage.setItem("token", response.data.token);
+      setIsAuthenticated(true);
 
       setMessage(response.data.message);
       navigate("/");
     } catch (err) {
       console.error(err);
       if (err.status === 401) setError("Invalid e-mail or password.");
+      if (err.status === 400) setError("Please type your e-mail and password.");
       if (err.status === 500)
         setError("Error on server side, please try again.");
     }
@@ -48,7 +50,7 @@ function Login({ setMessage, setError }) {
                 placeholder="your e-mail"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
-                className="p-2.5 mb-3.5 rounded-sm shadow-sm border border-blue-200"
+                className="p-2.5 mb-3.5 rounded-sm shadow-sm border border-blue-200 bg-white"
               />
             </div>
             <div className="flex flex-col">
@@ -60,7 +62,7 @@ function Login({ setMessage, setError }) {
                 placeholder="your password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
-                className="p-2.5 mb-3.5 rounded-sm shadow-sm border border-blue-200"
+                className="p-2.5 mb-3.5 rounded-sm shadow-sm border border-blue-200 bg-white"
               />
             </div>
             <button

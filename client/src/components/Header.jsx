@@ -1,18 +1,16 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import axios from "axios";
 
-function Header() {
-  const [user, setUser] = useState({});
-
-  const fetchUser = async () => {
+function Header({ isAuthenticated, setIsAuthenticated, setMessage }) {
+  const logout = async () => {
     try {
-      const token = localStorage.getItem("token");
-      const response = await axios.get(
-        `http://localhost:5000/api/auth/me/${token}`,
-      );
+      if (localStorage.getItem("token")) {
+        localStorage.clear("token");
+      }
+      const response = await axios.get("http://localhost:5000/api/auth/logout");
 
-      if (response.data.user) setUser(response.data.user);
+      setMessage(response.data.message);
+      setIsAuthenticated(false);
     } catch (err) {
       console.error(err);
     }
@@ -35,24 +33,38 @@ function Header() {
           >
             blogs
           </Link>
-          <Link
-            to={"/login"}
-            className="p-1.5 px-7 shadow-md bg-gray-100 rounded-2xl"
-          >
-            login
-          </Link>
-          <Link
-            to={"/register"}
-            className="p-1.5 px-7 shadow-md bg-gray-100 rounded-2xl"
-          >
-            register
-          </Link>
-          <Link
-            to={"/me"}
-            className="p-1.5 px-7 shadow-md bg-gray-100 rounded-2xl"
-          >
-            profile
-          </Link>
+
+          {isAuthenticated ? (
+            <>
+              <Link
+                to={"/me"}
+                className="p-1.5 px-7 shadow-md bg-gray-100 rounded-2xl"
+              >
+                profile
+              </Link>
+              <button
+                onClick={logout}
+                className="p-1.5 px-7 shadow-md bg-gray-100 rounded-2xl cursor-pointer"
+              >
+                logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                to={"/login"}
+                className="p-1.5 px-7 shadow-md bg-gray-100 rounded-2xl"
+              >
+                login
+              </Link>
+              <Link
+                to={"/register"}
+                className="p-1.5 px-7 shadow-md bg-gray-100 rounded-2xl"
+              >
+                register
+              </Link>
+            </>
+          )}
         </nav>
       </header>
     </>

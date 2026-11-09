@@ -1,5 +1,6 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 // Pages
 import Home from "./pages/Home";
@@ -15,6 +16,33 @@ import Error from "./components/Error";
 function App() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [user, setUser] = useState({});
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const fetchUser = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      if (token) {
+        console.log("Came here");
+        const response = await axios.get(
+          `http://localhost:5000/api/auth/me/${token}`,
+        );
+        if (response.data.user) {
+          setIsAuthenticated(true);
+          setUser(response.data.user);
+        }
+      } else {
+        setIsAuthenticated(false);
+        setUser({});
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, [isAuthenticated]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -29,7 +57,11 @@ function App() {
       <Message message={message} />
       <Error error={error} />
       <BrowserRouter>
-        <Header />
+        <Header
+          isAuthenticated={isAuthenticated}
+          setIsAuthenticated={setIsAuthenticated}
+          setMessage={setMessage}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
@@ -38,9 +70,15 @@ function App() {
           />
           <Route
             path="/login"
-            element={<Login setMessage={setMessage} setError={setError} />}
+            element={
+              <Login
+                setIsAuthenticated={setIsAuthenticated}
+                setMessage={setMessage}
+                setError={setError}
+              />
+            }
           />
-          <Route path="/me" element={<Profile />} />
+          <Route path="/me" element={<Profile user={user} />} />
         </Routes>
       </BrowserRouter>
     </>

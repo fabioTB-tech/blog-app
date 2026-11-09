@@ -51,7 +51,7 @@ function Register({ setMessage, setError }) {
                 placeholder="your nickname"
                 onChange={(e) => setUsername(e.target.value)}
                 value={username}
-                className="p-2.5 mb-3.5 rounded-sm shadow-sm border border-blue-200"
+                className="p-2.5 mb-3.5 rounded-sm shadow-sm border border-blue-200 bg-white"
               />
             </div>
             <div className="flex flex-col">
@@ -63,7 +63,7 @@ function Register({ setMessage, setError }) {
                 placeholder="your e-mail"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
-                className="p-2.5 mb-3.5 rounded-sm shadow-sm border border-blue-200"
+                className="p-2.5 mb-3.5 rounded-sm shadow-sm border border-blue-200 bg-white"
               />
             </div>
             <div className="flex flex-col">
@@ -75,7 +75,7 @@ function Register({ setMessage, setError }) {
                 placeholder="your password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
-                className="p-2.5 mb-3.5 rounded-sm shadow-sm border border-blue-200"
+                className="p-2.5 mb-3.5 rounded-sm shadow-sm border border-blue-200 bg-white"
               />
             </div>
             <button
