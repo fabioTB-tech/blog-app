@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Header({ isAuthenticated, setIsAuthenticated, setMessage }) {
+  const navigate = useNavigate();
+
   const logout = async () => {
     try {
       if (localStorage.getItem("token")) {
@@ -11,6 +13,7 @@ function Header({ isAuthenticated, setIsAuthenticated, setMessage }) {
 
       setMessage(response.data.message);
       setIsAuthenticated(false);
+      navigate("/");
     } catch (err) {
       console.error(err);
     }

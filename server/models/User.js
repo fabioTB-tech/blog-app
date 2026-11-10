@@ -9,6 +9,10 @@ const userSchema = new mongoose.Schema({
     select: false,
     minLength: [8, "Password should be greater then 8 characters"],
   },
+  picture: {
+    type: String,
+    default: "../public/data/default-pfp.jpg",
+  },
   createdAt: {
     type: Date,
     default: Date.now(),

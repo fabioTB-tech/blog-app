@@ -54,14 +54,14 @@ function App() {
 
   return (
     <>
-      <Message message={message} />
-      <Error error={error} />
       <BrowserRouter>
         <Header
           isAuthenticated={isAuthenticated}
           setIsAuthenticated={setIsAuthenticated}
           setMessage={setMessage}
         />
+        <Message message={message} />
+        <Error error={error} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
@@ -78,7 +78,10 @@ function App() {
               />
             }
           />
-          <Route path="/me" element={<Profile user={user} />} />
+          <Route
+            path="/me"
+            element={<Profile user={user} setError={setError} />}
+          />
         </Routes>
       </BrowserRouter>
     </>
