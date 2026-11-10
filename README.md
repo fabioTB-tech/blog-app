@@ -15,10 +15,10 @@ Hello! I'm Ahriri, this project was maded with the purpose of practicing and lea
 You must create a `.env` file on the server side with these informations:
 
 ```
-MONGO_URI=mongodb://127.0.0.1:27017/<db_name>
-PORT=<your_port>
-JWT_SECRET=<your_secret_key>
-JWT_EXPIRE=24h
+MONGO_URI=
+PORT=
+JWT_SECRET=
+JWT_EXPIRE=
 ```
 
 ---
