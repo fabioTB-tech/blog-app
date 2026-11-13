@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
+import Container from "../components/Container";
+
 function Profile({ user, setError }) {
   const navigate = useNavigate();
 
@@ -17,9 +19,16 @@ function Profile({ user, setError }) {
 
   return (
     <>
-      <main className="mt-50">
+      <Container>
         <h1>Hellooo, {user.username}</h1>
-      </main>
+        <div className="w-[150px] rounded-full p-2 shadow">
+          <img
+            src={user.avatar.url}
+            width={150}
+            className="rounded-full object-cover"
+          />
+        </div>
+      </Container>
     </>
   );
 }

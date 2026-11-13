@@ -7,9 +7,12 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Blogs from "./pages/blog/Blogs";
+import NewBlog from "./pages/blog/NewBlog";
 
 // Components
 import Header from "./components/Header";
+import Container from "./components/Container";
 import Message from "./components/Message";
 import Error from "./components/Error";
 
@@ -23,13 +26,20 @@ function App() {
     try {
       const token = localStorage.getItem("token");
       if (token) {
-        console.log("Came here");
-        const response = await axios.get(
+        const { data } = await axios.get(
           `http://localhost:5000/api/auth/me/${token}`,
         );
-        if (response.data.user) {
+        if (data.user) {
           setIsAuthenticated(true);
-          setUser(response.data.user);
+          setUser(data.user);
+          if (!data.user.avatar) {
+            setUser({
+              ...data.user,
+              avatar: {
+                url: "/src/public/default-pfp.jpg",
+              },
+            });
+          }
         }
       } else {
         setIsAuthenticated(false);
@@ -49,7 +59,7 @@ function App() {
       setMessage("");
       setError("");
       clearTimeout(timer);
-    }, 5000);
+    }, 3000);
   }, [message, error]);
 
   return (
@@ -81,6 +91,14 @@ function App() {
           <Route
             path="/me"
             element={<Profile user={user} setError={setError} />}
+          />
+          <Route
+            path="/blogs"
+            element={<Blogs user={user} setError={setError} />}
+          />
+          <Route
+            path="/newblog"
+            element={<NewBlog user={user} setError={setError} />}
           />
         </Routes>
       </BrowserRouter>
