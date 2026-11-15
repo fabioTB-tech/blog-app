@@ -9,6 +9,7 @@ Hello! I'm Ahriri, this project was maded with the purpose of practicing and lea
   - MongoDB
 - Front-end
   - React
+  - Tailwind
 
 ## Running the project
 ### Prerequisite
