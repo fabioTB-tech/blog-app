@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
-require("./config/cloudinary");
 const { MONGO_URI, PORT } = process.env;
 
 const app = express();
