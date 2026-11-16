@@ -20,26 +20,27 @@ function Home() {
           <p>Art, programming and Linux!</p>
         </div>
         <div className="flex justify-center">
-          <div className="w-114 h-125 shadow-lg">
+          <div className="w-156 h-125 shadow-lg">
             <div className="bg-gray-800 w-full h-full rounded-md overflow-hidden ">
               <div className="bg-gray-300 h-8 p-2.5 flex items-center justify-between">
-                <div className="text-lg">
+                <div className="text-2xl">
                   <DiTerminal />
                 </div>
-                <div className="flex gap-1 font-bold">
-                  <span>•</span>
-                  <span>•</span>
-                  <span>•</span>
+                <div className="flex gap-1.5 font-bold text-3xl">
+                  <span className="text-yellow-500">•</span>
+                  <span className="text-green-400">•</span>
+                  <span className="text-red-400">•</span>
                 </div>
               </div>
               <div className="p-5 text-white font-mono cursor-alias">
                 <p>
-                  <span className="text-green-300">[ahriri:~]$</span>{" "}
+                  <span className="text-green-300">[ahriri:~/Blog]$</span>{" "}
                   <span className="text-yellow-300">echo</span> "Hello, World!"
                 </p>
                 <p>Hello World!</p>
                 <p>
-                  <span className="text-green-300">[ahriri:~]$</span> {cursor}
+                  <span className="text-green-300">[ahriri:~/Blog]$</span>{" "}
+                  {cursor}
                 </p>
               </div>
             </div>
