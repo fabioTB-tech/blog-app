@@ -11,8 +11,7 @@ import Blogs from "./pages/blog/Blogs";
 import NewBlog from "./pages/blog/NewBlog";
 
 // Components
-import Header from "./components/Header";
-import Container from "./components/Container";
+import Nav from "./components/Nav";
 import Message from "./components/Message";
 import Error from "./components/Error";
 
@@ -65,7 +64,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header
+        <Nav
           isAuthenticated={isAuthenticated}
           setIsAuthenticated={setIsAuthenticated}
           setMessage={setMessage}
