@@ -1,6 +1,7 @@
 # Mern Blog Application
 
 Hello! I'm Ahriri, this project was maded with the purpose of practicing and learning more about *Full-Stack* development.
+(this project isn't done yet)
 
 ### Technologies:
 - Back-end
