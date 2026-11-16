@@ -21,7 +21,7 @@ function Nav({ isAuthenticated, setIsAuthenticated, setMessage }) {
   };
 
   return (
-    <nav className="p-3 px-64 h-16 w-full absolute top-0 flex justify-between items-center">
+    <nav className="bg-white p-3 px-64 h-16 w-full absolute top-0 flex justify-between items-center">
       <div>
         <DiTechcrunch className="text-4xl" />
       </div>
