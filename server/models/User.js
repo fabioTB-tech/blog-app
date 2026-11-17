@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     minLength: [8, "Password should be greater then 8 characters"],
   },
   avatar: {
-    type: String,
+    url: String,
   },
   createdAt: {
     type: Date,
