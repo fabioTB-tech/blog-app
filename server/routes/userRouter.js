@@ -6,6 +6,7 @@ const {
   registerUser,
   loginUser,
   getUserDetails,
+  getAllUsers,
   logout,
 } = require("../controller/userController.js");
 
@@ -15,5 +16,6 @@ router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/logout", logout);
 router.get("/me/:token", isAuthenticatedUser, getUserDetails);
+router.get("/users", getAllUsers);
 
 module.exports = router;
