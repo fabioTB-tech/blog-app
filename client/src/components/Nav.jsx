@@ -30,7 +30,7 @@ function Nav({ isAuthenticated, setIsAuthenticated, setMessage }) {
           home
         </Link>
         <Link to={"/blogs"} className="p-1.5">
-          blogs
+          posts
         </Link>
 
         {isAuthenticated ? (
