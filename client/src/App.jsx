@@ -63,44 +63,46 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Nav
-          isAuthenticated={isAuthenticated}
-          setIsAuthenticated={setIsAuthenticated}
-          setMessage={setMessage}
-        />
-        <Message message={message} />
-        <Error error={error} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/register"
-            element={<Register setMessage={setMessage} setError={setError} />}
+      <main className="flex flex-col bg-[url(/wallpaper.png)] bg-repeat bg-contain">
+        <BrowserRouter>
+          <Nav
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            setMessage={setMessage}
           />
-          <Route
-            path="/login"
-            element={
-              <Login
-                setIsAuthenticated={setIsAuthenticated}
-                setMessage={setMessage}
-                setError={setError}
-              />
-            }
-          />
-          <Route
-            path="/me"
-            element={<Profile user={user} setError={setError} />}
-          />
-          <Route
-            path="/blogs"
-            element={<Blogs user={user} setError={setError} />}
-          />
-          <Route
-            path="/newblog"
-            element={<NewBlog user={user} setError={setError} />}
-          />
-        </Routes>
-      </BrowserRouter>
+          <Message message={message} />
+          <Error error={error} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/register"
+              element={<Register setMessage={setMessage} setError={setError} />}
+            />
+            <Route
+              path="/login"
+              element={
+                <Login
+                  setIsAuthenticated={setIsAuthenticated}
+                  setMessage={setMessage}
+                  setError={setError}
+                />
+              }
+            />
+            <Route
+              path="/me"
+              element={<Profile user={user} setError={setError} />}
+            />
+            <Route
+              path="/blogs"
+              element={<Blogs user={user} setError={setError} />}
+            />
+            <Route
+              path="/newblog"
+              element={<NewBlog user={user} setError={setError} />}
+            />
+          </Routes>
+        </BrowserRouter>
+      </main>
     </>
   );
 }
