@@ -21,9 +21,9 @@ function Nav({ isAuthenticated, setIsAuthenticated, setMessage }) {
   };
 
   return (
-    <nav className="bg-white p-3 px-64 h-16 w-full absolute top-0 flex justify-between items-center">
-      <div>
-        <DiTechcrunch className="text-4xl" />
+    <nav className="bg-white border-red-200 border-2 rounded-lg p-4 h-14 m-auto mt-5 w-2/4 flex justify-between items-center">
+      <div onClick={() => navigate("/")}>
+        <p className="font-fredoka font-bold cursor-alias">BAH</p>
       </div>
       <div className="h-11 flex justify-end items-center gap-2">
         <Link to={"/"} className="p-1.5">
@@ -46,9 +46,6 @@ function Nav({ isAuthenticated, setIsAuthenticated, setMessage }) {
           <>
             <Link to={"/login"} className="p-1.5">
               login
-            </Link>
-            <Link to={"/register"} className="p-1.5">
-              register
             </Link>
           </>
         )}
