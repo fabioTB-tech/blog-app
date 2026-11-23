@@ -93,7 +93,7 @@ function App() {
               element={<Profile user={user} setError={setError} />}
             />
             <Route
-              path="/blogs"
+              path="/posts"
               element={<Blogs user={user} setError={setError} />}
             />
             <Route
