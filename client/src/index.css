@@ -12,6 +12,9 @@
     --color-container-border: #715C8A;
     --color-window: #EDE1F8;
     --color-window-border: #A39BAB;
+    --color-button: #9C8BFC;
+    --color-button-hover: #8677D9;
+    --color-button-border: #695EAB;
 }
 
 :root {
