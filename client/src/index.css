@@ -7,4 +7,20 @@
     --font-itim: "Itim", sans-serif;
     --font-fredoka: "Fredoka", sans-serif;
     --font-poppins: "Poppins", sans-serif;
+
+    --color-text: #2E2638;
+    --color-container-border: #715C8A;
+}
+
+:root {
+    font-family: var(--font-poppins);
+}
+
+#root {
+    padding: 2rem;
+    min-height: 100dvh;
+    background-image: url("/wallpaper.png");
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: repeat;
 }
