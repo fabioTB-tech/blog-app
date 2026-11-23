@@ -21,7 +21,7 @@ function Nav({ isAuthenticated, setIsAuthenticated, setMessage }) {
   };
 
   return (
-    <nav className="bg-white border-red-200 border-2 rounded-lg p-4 h-14 m-auto mt-5 w-2/4 flex justify-between items-center">
+    <nav className="bg-white border-container-border border-2 rounded-lg p-4 h-14 m-auto w-2/4 flex justify-between items-center">
       <div onClick={() => navigate("/")}>
         <p className="font-fredoka font-bold cursor-alias">BAH</p>
       </div>
