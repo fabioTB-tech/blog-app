@@ -63,7 +63,7 @@ function App() {
 
   return (
     <>
-      <main className="flex flex-col bg-[url(/wallpaper.png)] bg-repeat bg-contain">
+      <main className="flex flex-col gap-5 h-full">
         <BrowserRouter>
           <Nav
             isAuthenticated={isAuthenticated}
