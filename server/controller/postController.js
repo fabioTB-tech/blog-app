@@ -39,13 +39,13 @@ exports.postBlog = async (req, res) => {
   }
 };
 
-// Get blogs
-exports.getAllBlogs = async (req, res) => {
+// Get posts
+exports.getAllPosts = async (req, res) => {
   try {
-    const blogs = await Post.find();
+    const posts = await Post.find();
 
     return res.status(200).json({
-      blogs,
+      posts,
     });
   } catch (err) {
     console.error(err);
