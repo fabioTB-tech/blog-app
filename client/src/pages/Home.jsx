@@ -1,9 +1,5 @@
-import { useState, useEffect } from "react";
-
-// Icons
-import { VscChromeMinimize } from "react-icons/vsc";
-import { VscChromeMaximize } from "react-icons/vsc";
-import { CgClose } from "react-icons/cg";
+// Component
+import Window from "../components/Window";
 
 function Home() {
 
@@ -21,59 +17,35 @@ function Home() {
             <div className="h-full w-fit"></div>
           </div>
           <div className="h-96 grid grid-cols-2 gap-5 justify-center">
-            <div className="w-full h-83.75 flex justify-center items-center">
-              <div className="w-full h-full flex flex-col bg-window border-window-border border-2 rounded-md">
-                <div className="h-8.75 flex justify-between p-2">
-                  <p className="text-sm">Bem-vindo</p>
-                  <div className="flex gap-2">
-                    <VscChromeMinimize />
-                    <VscChromeMaximize />
-                    <CgClose />
-                  </div>
-                </div>
-                <div className="p-3 pt-0 w-full h-73.75 flex justify-center">
-                  <div className="w-full h-full bg-purple-50 rounded-sm border-2 border-window-border flex justify-center">
-                    <div className="max-w-64 h-full p-2 border-2 overflow-y-auto border-x-purple-200 border-y-transparent bg-white">
-                      <h1 className="text-purple-900 text-xl text-center font-bold mb-1.5">Bem-vindo(a)<br/>ao meu blog!</h1>
-                      <p className="mb-2.5">
-                        Olá, eu me chamo Ahri e eu te dou as boas vindas ao meu site! Espero de coração que você se sinta confortável neste site, ele ainda está em desenvolvimento e eu estou colocando muito esforço nele.
-                        <br />
-                        Ok, mas antes de tudo:
-                      </p>
-                      <h2 className="text-purple-800 text-lg font-bold mb-1.5">Quem sou eu?</h2>
-                      <p className="mb-2.5">
-                        Eu sou uma artista e programadora, eu gosto de desenhar coisas simples como você pode ver pela minha OC ao lado, meu estilo é mais voltado para o cartoon mas eu já desenhei em outros estilos também.
-                        Eu também sou uma programadora, estive estudando desde o início de 2025 e agora eu estou construindo este site para ser o meu "cantinho" na internet
-                      </p>
-                      <h2 className="text-purple-800 text-lg font-bold mb-1.5">Sobre o site</h2>
-                      <p className="mb-2.5">
-                        Como eu disse acima, este site ainda está em desenvolvimento, a princípio ele é um blog mesmo onde eu estarei compartilhando de assuntos variados que eu acho interessante, tanto sobre tecnologia quanto coisas artísticas e criativas, neste site eu vou estar compartilhando minhas opiniões e pensamentos em relação à alguns assuntos dentro desses temas, também contarei minhas experiências com estes assuntos, como estudos, projetos, etc.
-                        Eu pretendo expandir este site ainda mais futuramente, adicionando coisas mais divertidas e outras úteis também.
-                        Caso você seja um programador ou programadora, sinta-se livre para acessar meu perfil no <a href="https://github.com/fabioTB-tech" rel="_blank">Github</a>, este site é open-source, então caso você queira colaborar com alguma ideia, melhorar alguma coisa, ou apenas estudar o código, vá em frente!
-                        Enfim, no mais é isto por agora, navegue o quanto quiser pelo site, obrigado por ler até aqui! {"(˶>⩊<˶)"}
-                      </p>
-                    </div>
-                  </div>
+            <Window>
+              <div className="w-full h-full bg-purple-50 rounded-sm border-2 border-window-border flex justify-center">
+                <div className="max-w-64 h-full p-2 border-2 overflow-y-auto border-x-purple-200 border-y-transparent bg-white">
+                  <h1 className="text-purple-900 text-xl text-center font-bold mb-1.5">Bem-vindo(a)<br/>ao meu blog!</h1>
+                  <p className="mb-2.5">
+                    Olá, eu me chamo Ahri e eu te dou as boas vindas ao meu site! Espero de coração que você se sinta confortável neste site, ele ainda está em desenvolvimento e eu estou colocando muito esforço nele.
+                    <br />
+                    Ok, mas antes de tudo:
+                  </p>
+                  <h2 className="text-purple-800 text-lg font-bold mb-1.5">Quem sou eu?</h2>
+                  <p className="mb-2.5">
+                    Eu sou uma artista e programadora, eu gosto de desenhar coisas simples como você pode ver pela minha OC ao lado, meu estilo é mais voltado para o cartoon mas eu já desenhei em outros estilos também.
+                    Eu também sou uma programadora, estive estudando desde o início de 2025 e agora eu estou construindo este site para ser o meu "cantinho" na internet
+                  </p>
+                  <h2 className="text-purple-800 text-lg font-bold mb-1.5">Sobre o site</h2>
+                  <p className="mb-2.5">
+                    Como eu disse acima, este site ainda está em desenvolvimento, a princípio ele é um blog mesmo onde eu estarei compartilhando de assuntos variados que eu acho interessante, tanto sobre tecnologia quanto coisas artísticas e criativas, neste site eu vou estar compartilhando minhas opiniões e pensamentos em relação à alguns assuntos dentro desses temas, também contarei minhas experiências com estes assuntos, como estudos, projetos, etc.
+                    Eu pretendo expandir este site ainda mais futuramente, adicionando coisas mais divertidas e outras úteis também.
+                    Caso você seja um programador ou programadora, sinta-se livre para acessar meu perfil no <a href="https://github.com/fabioTB-tech" rel="_blank">Github</a>, este site é open-source, então caso você queira colaborar com alguma ideia, melhorar alguma coisa, ou apenas estudar o código, vá em frente!
+                    Enfim, no mais é isto por agora, navegue o quanto quiser pelo site, obrigado por ler até aqui! {"(˶>⩊<˶)"}
+                  </p>
                 </div>
               </div>
-            </div>
-            <div className="w-full h-83.75 flex justify-center items-center">
-              <div className="w-full h-full flex flex-col bg-window border-window-border border-2 rounded-md">
-                <div className="h-8.75 flex justify-between p-2">
-                  <p className="text-sm">Ahriri</p>
-                  <div className="flex gap-2">
-                    <VscChromeMinimize />
-                    <VscChromeMaximize />
-                    <CgClose />
-                  </div>
-                </div>
-                <div className="p-3 pt-0 w-full h-73.75 flex justify-center">
-                  <div className="w-full h-full bg-[url(/square-pattern.jpeg)] bg-size-[auto_25px] rounded-sm border-2 border-window-border flex justify-center">
-                    <img src="/ahriri-sticker.png" alt="Ahriri's OC" />
-                  </div>
-                </div>
+            </Window>
+            <Window>
+              <div className="w-full h-full bg-[url(/square-pattern.jpeg)] bg-size-[auto_25px] rounded-sm border-2 border-window-border flex justify-center">
+                <img src="/ahriri-sticker.png" alt="Ahriri's OC" />
               </div>
-            </div>
+            </Window>
           </div>
           <div className="w-full h-12 flex justify-center">
             <button className="p-2 px-11 bg-button border-button-border border rounded-md text-white cursor-pointer hover:bg-button-hover">
