@@ -39,8 +39,8 @@ function Blog() {
               <div className="w-full p-2">
                 {posts && posts.map(post => (
                   <div key={post._id} className="w-full flex flex-col border-b border-gray-300">
-                    <div className="flex justify-between">
-                      <h2 className="text-xl font-semibold">{ post.title }</h2>
+                    <div className="flex justify-between items-center">
+                      <h2 className="text-2xl font-semibold">{ post.title }</h2>
                       <MomentProvider
                         moment={moment}
                         locale={"pt-br"}
@@ -49,6 +49,16 @@ function Blog() {
                       >
                         <Moment className="text-sm text-gray-500">{ post.createdAt }</Moment>
                       </MomentProvider>
+                    </div>
+                    <div className="px-2">
+                      <p className="text-sm">{ post.description }</p>
+                    </div>
+                    <div className="flex justify-end">
+                      <button
+                        className="p-1 px-5 bg-button border-2 border-button-border text-white hover:bg-button-hover mb-3 mr-3 rounded-md"
+                      >
+                        ler mais
+                      </button>
                     </div>
                   </div>
                 ))}
