@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Blog from "./pages/blog/Blog";
 import Blogs from "./pages/blog/Blogs";
 import NewBlog from "./pages/blog/NewBlog";
 
@@ -91,6 +92,10 @@ function App() {
             <Route
               path="/me"
               element={<Profile user={user} setError={setError} />}
+            />
+            <Route
+              path="/blog"
+              element={<Blog />}
             />
             <Route
               path="/posts"
