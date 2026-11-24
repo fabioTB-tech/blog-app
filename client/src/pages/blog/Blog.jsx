@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import moment from "moment/min/moment-with-locales";
 
+import Moment, { MomentProvider } from 'react-moment';
 import Window from "../../components/Window";
 
 function Blog() {
@@ -39,7 +41,14 @@ function Blog() {
                   <div key={post._id} className="w-full flex flex-col border-b border-gray-300">
                     <div className="flex justify-between">
                       <h2 className="text-xl font-semibold">{ post.title }</h2>
-                      <p>{ post.createdAt }</p>
+                      <MomentProvider
+                        moment={moment}
+                        locale={"pt-br"}
+                        local
+                        format="D MMMM YYYY"
+                      >
+                        <Moment className="text-sm text-gray-500">{ post.createdAt }</Moment>
+                      </MomentProvider>
                     </div>
                   </div>
                 ))}
