@@ -16,11 +16,19 @@ function Window({ children, fluid }) {
             <CgClose />
           </div>
         </div>
-        <div className="p-3 pt-0 w-full h-full flex justify-center">
-          <div className="w-full h-full bg-purple-50 rounded-sm border-2 border-window-border flex justify-center">
-            {children}
+        {fluid ? (
+          <div className="p-3 pt-0 w-full h-full flex justify-center">
+            <div className="w-full h-full bg-purple-50 rounded-sm border-2 border-window-border flex justify-center">
+              {children}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="p-3 pt-0 w-full h-75 flex justify-center">
+            <div className="w-full h-full bg-purple-50 rounded-sm border-2 border-window-border flex justify-center">
+              {children}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
