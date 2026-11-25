@@ -7,13 +7,15 @@ import Window from "../../components/Window";
 
 function Blog() {
   const [posts, setPosts] = useState([]);
+  const [catImg, setCatImg] = useState("");
 
   const fetchPosts = async () => {
     try {
-      const { data } = await axios("http://localhost:5000/api/blog/getposts");
+      const { data } = await axios.get("http://localhost:5000/api/blog/getposts");
+      const catImgRes = await axios.get("https://cataas.com/cat");
 
+      setCatImg(catImgRes.data.url)
       setPosts(data.posts)
-      console.log(data.posts)
     } catch (err) {
       console.error(err)
     }
@@ -66,7 +68,11 @@ function Blog() {
             </Window>
           </div>
           <div className="w-1/3">
-
+            <div className="w-full h-44">
+              <div className="w-full h-full p-2">
+                <img src={catImg} alt="Foto diária de gato" className="w-full h-full object-cover rounded-md" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
