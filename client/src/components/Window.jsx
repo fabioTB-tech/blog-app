@@ -1,6 +1,6 @@
 import { VscChromeMinimize } from "react-icons/vsc";
 import { VscChromeMaximize } from "react-icons/vsc";
-import { CgClose } from "react-icons/cg";
+import { VscChromeClose } from "react-icons/cg";
 
 function Window({ children, fluid }) {
   const classes = `w-full ${fluid ? "h-fit" : "h-83.75"} flex justify-center items-center`
@@ -13,7 +13,7 @@ function Window({ children, fluid }) {
           <div className="flex gap-2">
             <VscChromeMinimize />
             <VscChromeMaximize />
-            <CgClose />
+            <VscChromeClose />
           </div>
         </div>
         {fluid ? (
