@@ -1,7 +1,9 @@
 function Container({ children }) {
   return (
-    <article className="w-7x1 mt-16 bg-white p-5 flex flex-col">
-      {children}
+    <article className="h-full flex flex-col justify-center items-center gap-16">
+      <div className="bg-white w-2/4 p-5 rounded-lg border-container-border border-2">
+        {children}
+      </div>
     </article>
   );
 }
