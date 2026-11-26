@@ -45,7 +45,7 @@ function Blog({ setError }) {
         </div>
         <div className="w-full h-fit flex justify-between">
           <div className="w-full">
-            <Window fluid={true}>
+            <Window fluid={true} name={"publicações"}>
               <div className="w-full p-2">
                 {posts && posts.map(post => (
                   <div key={post._id} className="w-full flex flex-col border-b border-gray-300">

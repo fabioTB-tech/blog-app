@@ -18,7 +18,7 @@ function Home() {
           <div className="h-full w-fit"></div>
         </div>
         <div className="h-96 grid grid-cols-2 gap-5 justify-center">
-          <Window>
+          <Window name={"Bem-vindo"}>
             <div className="max-w-64 h-full p-2 border-2 overflow-y-auto border-x-purple-200 border-y-transparent bg-white">
               <h1 className="text-purple-900 text-xl text-center font-bold mb-1.5">Bem-vindo(a)<br/>ao meu blog!</h1>
               <p className="mb-2.5">
@@ -40,7 +40,7 @@ function Home() {
               </p>
             </div>
           </Window>
-          <Window>
+          <Window name={"Ahriri"}>
             <div className="w-full h-full bg-[url(/square-pattern.jpeg)] bg-size-[auto_25px] flex justify-center">
               <img src="/ahriri-sticker.png" alt="Ahriri's OC" />
             </div>
