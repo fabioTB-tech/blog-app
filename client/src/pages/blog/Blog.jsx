@@ -68,9 +68,9 @@ function Blog() {
             </Window>
           </div>
           <div className="w-1/3">
-            <div className="w-full h-44">
-              <div className="w-full h-full p-2">
-                <img src={catImg} alt="Foto diária de gato" className="w-full h-full object-cover rounded-md" />
+            <div className="w-full h-44 p-2">
+              <div className="w-full h-full p-2 border-2 border-dotted border-window-border rounded-lg">
+                <img src={catImg} alt="Foto de gato" className="w-full h-full object-cover rounded-md shadow-md" />
               </div>
             </div>
           </div>
