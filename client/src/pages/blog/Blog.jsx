@@ -5,20 +5,28 @@ import moment from "moment/min/moment-with-locales";
 import Moment, { MomentProvider } from 'react-moment';
 import Window from "../../components/Window";
 
-function Blog() {
+function Blog({ setError }) {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [catImg, setCatImg] = useState("");
 
   const fetchPosts = async () => {
     try {
       const { data } = await axios.get("http://localhost:5000/api/blog/getposts");
-      const catImgRes = await axios.get("https://cataas.com/cat");
 
-      setCatImg(catImgRes.data.url)
       setPosts(data.posts)
     } catch (err) {
-      console.error(err)
+      console.error(err);
+      setError("Erro ao carregar postagens...")
     }
+  }
+
+  const fetchRandCatImg = async () => {
+    setLoading(true);
+    const catImgRes = await axios.get("https://cataas.com/cat");
+
+    if (catImgRes) setCatImg(catImgRes.data.url);
+    if (catImgRes.data.url) setLoading(false);
   }
 
   useEffect(() => {
@@ -67,12 +75,20 @@ function Blog() {
               </div>
             </Window>
           </div>
-          <div className="w-1/3">
-            <div className="w-full h-44 p-2">
-              <div className="w-full h-full p-2 border-2 border-dotted border-window-border rounded-lg">
-                <img src={catImg} alt="Foto de gato" className="w-full h-full object-cover rounded-md shadow-md" />
-              </div>
+          <div className="w-1/3 flex flex-col items-center">
+            <div className="w-full h-full p-2 flex flex-col items-center">
+              {catImg ? (
+                <div className="w-44 h-44 p-2 border-2 border-dotted border-window-border rounded-lg">
+                  <img src={catImg} alt="Foto de gato" className="w-full h-full object-cover rounded-md shadow-md" />
+                </div>
+              ) : <p>clique para gerar aleatoriamente a imagem de um gatito fofo :3</p>}
             </div>
+            <button
+              onClick={fetchRandCatImg}
+              className="p-1 px-5 bg-button border-2 border-button-border text-white hover:bg-button-hover mb-3 mr-3 rounded-md"
+            >
+              {loading ? "..." : "gerar gatito"}
+            </button>
           </div>
         </div>
       </div>
