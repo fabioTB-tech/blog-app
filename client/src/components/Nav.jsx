@@ -29,8 +29,8 @@ function Nav({ isAuthenticated, setIsAuthenticated, setMessage }) {
         <Link to={"/"} className="p-1.5">
           home
         </Link>
-        <Link to={"/posts"} className="p-1.5">
-          posts
+        <Link to={"/blog"} className="p-1.5">
+          blog
         </Link>
 
         {isAuthenticated ? (
