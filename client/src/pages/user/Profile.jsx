@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-import Container from "../components/Container";
+import Container from "../../components/Container";
 
 function Profile({ user, setError }) {
   const navigate = useNavigate();

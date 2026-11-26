@@ -4,9 +4,9 @@ import axios from "axios";
 
 // Pages
 import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
+import Profile from "./pages/user/Profile";
+import Register from "./pages/user/Register";
+import Login from "./pages/user/Login";
 import Blog from "./pages/blog/Blog";
 import Blogs from "./pages/blog/Blogs";
 import NewBlog from "./pages/blog/NewBlog";
