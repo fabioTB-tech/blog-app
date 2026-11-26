@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Register({ setMessage, setError }) {
   const [username, setUsername] = useState("");
@@ -38,20 +39,20 @@ function Register({ setMessage, setError }) {
 
   return (
     <>
-      <main className="w-dvw h-dvh flex flex-col justify-center bg-blue-200">
-        <section className="m-auto w-96 bg-cyan-50 p-11 rounded-2xl shadow-md backdrop-blur-md">
+      <main className="w-full h-full flex flex-col justify-center">
+        <section className="m-auto w-96 bg-white p-11 border-2 border-container-border rounded-2xl shadow-md backdrop-blur-md">
           <h1 className="text-center text-3xl font-bold mb-3.5">Register</h1>
           <form>
             <div className="flex flex-col">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username">Nome de usuário</label>
               <input
                 type="text"
                 name="username"
                 required
-                placeholder="your nickname"
+                placeholder="seu nome ou apelido"
                 onChange={(e) => setUsername(e.target.value)}
                 value={username}
-                className="p-2.5 mb-3.5 rounded-sm shadow-sm border border-blue-200 bg-white"
+                className="p-2.5 mb-3.5 rounded-sm border-2 border-transparent border-b-gray-200 bg-white"
               />
             </div>
             <div className="flex flex-col">
@@ -60,32 +61,35 @@ function Register({ setMessage, setError }) {
                 type="email"
                 name="email"
                 required
-                placeholder="your e-mail"
+                placeholder="seu e-mail"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
-                className="p-2.5 mb-3.5 rounded-sm shadow-sm border border-blue-200 bg-white"
+                className="p-2.5 mb-3.5 rounded-sm border-2 border-transparent border-b-gray-200 bg-white"
               />
             </div>
             <div className="flex flex-col">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Senha</label>
               <input
                 type="password"
                 name="password"
                 required
-                placeholder="your password"
+                placeholder="sua senha"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
-                className="p-2.5 mb-3.5 rounded-sm shadow-sm border border-blue-200 bg-white"
+                className="p-2.5 mb-3.5 rounded-sm border-2 border-transparent border-b-gray-200 bg-white"
               />
             </div>
             <button
               type="submit"
               onClick={handleSubmit}
-              className="p-2.5 text-center w-full rounded-sm shadow-md bg-blue-300 hover:bg-blue-400 text-white cursor-pointer"
+              className="p-2.5 text-center w-full border-2 border-button-border rounded-md shadow-md bg-button hover:bg-button-hover text-white cursor-pointer"
             >
-              Register
+              Cadastrar
             </button>
           </form>
+          <p className="text-sm mt-1 text-gray-500">
+            Já tem uma conta? <Link to={"/login"} className="text-blue-600">login</Link>
+          </p>
         </section>
       </main>
     </>
