@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // Component
 import Window from "../components/Window";
 
@@ -6,9 +8,9 @@ function Home() {
   return (
     <section className="h-full flex flex-col justify-center items-center gap-16">
       <div className="bg-white w-2/4 p-5 rounded-lg border-container-border border-2">
-        <div className="grid grid-cols-3 justify-center p-11">
+        <div className="flex justify-center p-11">
           <div className="h-full w-fit"></div>
-          <div className="h-full w-fit text-center">
+          <div className="h-full w-full text-center">
             <h1 className="text-5xl font-itim mb-6">Blog da Ahri</h1>
             <p className="font-poppins text-lg">Assuntos variados!</p>
             <p className="font-poppins text-lg">Combinando criatividade com programação.</p>
@@ -46,7 +48,7 @@ function Home() {
         </div>
         <div className="w-full h-12 flex justify-center">
           <button className="p-2 px-11 bg-button border-button-border border rounded-md text-white cursor-pointer hover:bg-button-hover">
-            <a href="/posts">Ler postagens</a>
+            <Link to="/blog">Ler postagens</Link>
           </button>
         </div>
       </div>
