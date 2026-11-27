@@ -23,10 +23,16 @@ function Blog({ setError }) {
 
   const fetchRandCatImg = async () => {
     setLoading(true);
-    const catImgRes = await axios.get("https://cataas.com/cat");
+    try {
+      const catImgRes = await axios.get("https://cataas.com/cat");
 
-    if (catImgRes) setCatImg(catImgRes.data.url);
-    if (catImgRes.data.url) setLoading(false);
+      if (catImgRes) setCatImg(catImgRes.data.url);
+      if (catImgRes.data.url) setLoading(false);
+    } catch (err) {
+      console.error(err);
+      setLoading(false);
+      setError("Falhou ao carregar a imagem")
+    }
   }
 
   useEffect(() => {
