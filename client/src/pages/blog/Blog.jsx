@@ -85,6 +85,7 @@ function Blog({ setError }) {
             </div>
             <button
               onClick={fetchRandCatImg}
+              disabled={loading}
               className="p-1 px-5 bg-button border-2 border-button-border text-white hover:bg-button-hover mb-3 mr-3 rounded-md"
             >
               {loading ? "..." : "gerar gatito"}
