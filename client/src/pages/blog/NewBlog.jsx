@@ -40,17 +40,17 @@ function NewBlog({ user }) {
   return (
     <Container>
       <h2 className="text-3xl">
-        New post! <span className="text-lg">(only for ahriri, get out!!)</span>
+        Nova publicação! <span className="text-lg">(Só pra a Ahri, sai!!!)</span>
       </h2>
       <form encType="multipart/form-data">
         <div className="flex flex-col mb-5">
-          <lable htmlFor="title">Title</lable>
+          <lable htmlFor="title">Título</lable>
           <input
             type="text"
             id="title"
             name="title"
             required
-            placeholder="your post's title"
+            placeholder="título da sua publicação"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
             className="p-1.5 px-3 border rounded-2xl border-blue-200"
@@ -58,7 +58,7 @@ function NewBlog({ user }) {
         </div>
         <div className="flex mb-5">
           <div className="flex flex-col">
-            <lable htmlFor="image">Blog image</lable>
+            <lable htmlFor="image">Imagem para a publicação</lable>
             <input
               type="file"
               id="image"
@@ -74,12 +74,12 @@ function NewBlog({ user }) {
           </div>
         </div>
         <div className="flex flex-col mb-5">
-          <lable htmlFor="description">Description</lable>
+          <lable htmlFor="description">Descrição</lable>
           <textarea
             id="description"
             name="description"
             required
-            placeholder="a description for your post in a brief"
+            placeholder="Uma descrição da publicação em resumo"
             onChange={(e) => setDescription(e.target.value)}
             value={description}
             className="p-1.5 px-3 border rounded-2xl h-26 resize-none border-blue-200"
@@ -100,7 +100,7 @@ function NewBlog({ user }) {
           type="submit"
           className="w-full bg-blue-400 text-blue-50 p-3 rounded-2xl cursor-pointer hover:bg-blue-500"
         >
-          Publicate Blog
+          Enviar publicação
         </button>
       </form>
     </Container>
