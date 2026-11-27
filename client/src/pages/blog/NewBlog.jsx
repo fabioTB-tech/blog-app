@@ -46,6 +46,8 @@ function NewBlog({ user }) {
           <lable htmlFor="title">Title</lable>
           <input
             type="text"
+            id="title"
+            name="title"
             required
             placeholder="your post's title"
             onChange={(e) => setTitle(e.target.value)}
@@ -58,6 +60,7 @@ function NewBlog({ user }) {
             <lable htmlFor="image">Blog image</lable>
             <input
               type="file"
+              id="image"
               name="image"
               accept="image/*"
               required
@@ -72,6 +75,7 @@ function NewBlog({ user }) {
         <div className="flex flex-col mb-5">
           <lable htmlFor="description">Description</lable>
           <textarea
+            id="description"
             name="description"
             required
             placeholder="a description for your post in a brief"
@@ -83,6 +87,7 @@ function NewBlog({ user }) {
         <div className="flex flex-col mb-5">
           <lable htmlFor="content">Content</lable>
           <textarea
+            id="content"
             name="content"
             required
             placeholder="content of your post, write now!"
