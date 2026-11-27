@@ -35,7 +35,11 @@ function Home() {
               <p className="mb-2.5">
                 Como eu disse acima, este site ainda está em desenvolvimento, a princípio ele é um blog mesmo onde eu estarei compartilhando de assuntos variados que eu acho interessante, tanto sobre tecnologia quanto coisas artísticas e criativas, neste site eu vou estar compartilhando minhas opiniões e pensamentos em relação à alguns assuntos dentro desses temas, também contarei minhas experiências com estes assuntos, como estudos, projetos, etc.
                 Eu pretendo expandir este site ainda mais futuramente, adicionando coisas mais divertidas e outras úteis também.
-                Caso você seja um programador ou programadora, sinta-se livre para acessar meu perfil no <a href="https://github.com/fabioTB-tech" rel="_blank">Github</a>, este site é open-source, então caso você queira colaborar com alguma ideia, melhorar alguma coisa, ou apenas estudar o código, vá em frente!
+                Caso você seja um programador ou programadora, sinta-se livre para acessar meu perfil no
+                {" "}<a href="https://github.com/fabioTB-tech" className="text-blue-600 hover:text-blue-800 hover:underline" rel="_blank">
+                  Github
+                </a>
+                , este site é open-source, então caso você queira colaborar com alguma ideia, melhorar alguma coisa, ou apenas estudar o código, vá em frente!
                 Enfim, no mais é isto por agora, navegue o quanto quiser pelo site, obrigado por ler até aqui! {"(˶>⩊<˶)"}
               </p>
             </div>
