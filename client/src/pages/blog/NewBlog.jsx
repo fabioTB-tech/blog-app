@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MDEditor from "@uiw/react-md-editor";
 
 import axios from "axios";
 
@@ -85,15 +86,13 @@ function NewBlog({ user }) {
           />
         </div>
         <div className="flex flex-col mb-5">
-          <lable htmlFor="content">Content</lable>
-          <textarea
-            id="content"
-            name="content"
-            required
-            placeholder="content of your post, write now!"
-            onChange={(e) => setContent(e.target.value)}
+          <MDEditor
             value={content}
-            className="p-1.5 px-3 border rounded-2xl h-80 resize-y border-blue-200"
+            onChange={setContent}
+            preview="edit"
+            textareaProps={{
+              placeholder: "Conteúdo da publicação",
+            }}
           />
         </div>
         <button
