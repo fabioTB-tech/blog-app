@@ -1,4 +1,3 @@
-import { DiTechcrunch } from "react-icons/di";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
